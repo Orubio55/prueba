@@ -1,0 +1,14 @@
+.field {
+    display: inline-block;
+    vertical-align: top;
+  }
+  label {
+    align-items: center;
+    justify-content: left;
+    display: flex;
+  }
+  .input,
+  .select {
+    margin-left: 15px;
+    width: 10vw;
+  }

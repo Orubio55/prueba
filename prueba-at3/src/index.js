@@ -3,14 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Layout from "components/layout";
 import { Provider } from "react-redux";
-import { ToastContainer } from "react-toastify";
 import { store } from "store/store";
 import reportWebVitals from "./reportWebVitals";
+import "./index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <ToastContainer toastStyle={{ fontFamily: "NotoSans-Regular" }} />
     <Layout />
   </Provider>
 );

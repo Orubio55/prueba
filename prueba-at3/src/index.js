@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import Layout from "components/layout";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import { store } from "store/store";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <ToastContainer toastStyle={{ fontFamily: "NotoSans-Regular" }} />
+    <Layout />
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

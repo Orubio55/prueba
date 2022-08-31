@@ -1,7 +1,7 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
-const CardItem = React.memo(({ data }) => {
+const CardItem = React.memo(({ data, onEdit }) => {
   console.log(data);
   return (
     <div className="card_item">
@@ -13,7 +13,7 @@ const CardItem = React.memo(({ data }) => {
           {data.name}
         </div>
         <div className="overlay">
-          <button type="submit" className="buy-btn" onClick={() => null}>
+          <button type="submit" className="buy-btn" onClick={() => onEdit()}>
             View Details
           </button>
         </div>

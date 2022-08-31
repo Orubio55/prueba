@@ -25,10 +25,12 @@ export const apiSlice = createApi({
     }),
     putSite: builder.mutation({
       query: (body) => ({
-        url: `/site/${body.id}`,
+        // eslint-disable-next-line no-underscore-dangle
+        url: `/site/${body._id}`,
         method: "PUT",
         body,
       }),
+      invalidatesTags: ["Sites"],
     }),
     deleteSite: builder.mutation({
       query: (id) => ({
@@ -36,6 +38,7 @@ export const apiSlice = createApi({
         params: id,
         method: "DELETE",
       }),
+      invalidatesTags: ["Sites"],
     }),
   }),
 });

@@ -1,0 +1,33 @@
+.paginationBox{    
+    float: right;
+    margin-right: 2%;    
+    .pagination-element {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      &:hover{
+        background-color: #ddd;
+        border-radius: 5px;
+      }
+    }
+    .active{
+      background-color: #f08804;;
+      color: white;
+      border-radius: 5px;
+      &:hover{
+        background-color: #ac6202;;
+        border-radius: 5px;
+      }
+    }
+    span{
+      cursor: pointer;
+    }
+    
+  }
+
+  .panelTab{
+    .paginationBox{    
+      position: absolute;
+    }
+  }

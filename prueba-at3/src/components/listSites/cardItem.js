@@ -20,16 +20,18 @@ const CardItem = React.memo(({ data, onEdit, onDetails }) => {
           <FormattedMessage id="nickname" defaultMessage="Public Path" />
           {data.publicPath}
         </div>
-        <div>
-          <span onClick={() => onDetails()}>View Details</span>
-        </div>
-        <div>
-          <span onClick={() => onDelete()}>
-            <i className="fas fa-trash" />
+        <div className="actions">
+          <span onClick={() => onDetails()}>
+            <FormattedMessage id="viewDetails" defaultMessage="View Details" />
           </span>
-          <span onClick={() => onEdit()}>
-            <i className="fas fa-edit" />
-          </span>
+          <div>
+            <span onClick={() => onDelete()}>
+              <i className="fas fa-trash" />
+            </span>
+            <span onClick={() => onEdit()}>
+              <i className="fas fa-edit" />
+            </span>
+          </div>
         </div>
       </div>
     </div>

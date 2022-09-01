@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import LanguageContext from "context/language";
 import translations from "translations";
 import { IntlProvider } from "react-intl";
@@ -16,7 +17,17 @@ const Layout = () => {
         <div className="containerAplication">
           <Router />
         </div>
-        <ToastContainer toastStyle={{ fontFamily: "NotoSans-Regular" }} />{" "}
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </IntlProvider>
     </LanguageContext.Provider>
   );

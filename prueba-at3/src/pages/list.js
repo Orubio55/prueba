@@ -3,6 +3,8 @@ import ListSites from "components/listSites";
 import ModalWrapper from "components/modal";
 import Site from "components/modal/site";
 import Details from "components/modal/details";
+import { isNotError } from "utils/error";
+import { toast } from "react-toastify";
 import {
   useGetSitesQuery,
   usePostSiteMutation,
@@ -18,13 +20,23 @@ const List = () => {
 
   const onCreate = async (data) => {
     const r = await postSite(data);
-    console.log(r);
+    if (isNotError(r)) {
+      toast.success("Create successfully", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 3000,
+      });
+    }
     setModalView(false);
   };
 
   const onEdit = async (data) => {
     const r = await putSite(data);
-    console.log(r);
+    if (isNotError(r)) {
+      toast.success("Edit successfully", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 3000,
+      });
+    }
     setModalView(false);
   };
 

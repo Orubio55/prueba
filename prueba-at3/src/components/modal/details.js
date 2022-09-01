@@ -11,17 +11,17 @@ const Details = ({ site = null, closeModal }) => (
     <div className="column2">
       <div className="label semi">
         <FormattedMessage id="name" defaultMessage="Name" />
-        <span>{site.description}</span>
+        <span>{site.name}</span>
       </div>
       <div className="label semi">
         <FormattedMessage id="key" defaultMessage="Key" />
-        <span>{site.path}</span>
+        <span>{site.key}</span>
       </div>
     </div>
     <div className="column2">
       <div className="label semi">
         <FormattedMessage id="Site" defaultMessage="Site" />
-        <span>{site.description}</span>
+        <span>{site.site}</span>
       </div>
       <div className="label semi">
         <FormattedMessage id="cretateDate" defaultMessage="Cretate Date" />

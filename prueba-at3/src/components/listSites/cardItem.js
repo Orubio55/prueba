@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { FormattedMessage } from "react-intl";
 import { useDeleteSiteMutation } from "api/apiSlice";
 
-const CardItem = React.memo(({ data, onEdit }) => {
-  const [viewDetails, setViewDetails] = useState(false);
+const CardItem = React.memo(({ data, onEdit, onDetails }) => {
   const [deleteSite] = useDeleteSiteMutation();
 
   const onDelete = async () => {
@@ -19,28 +18,19 @@ const CardItem = React.memo(({ data, onEdit }) => {
         <div className="real_name">{data.name}</div>
         <div className="role_name">
           <FormattedMessage id="nickname" defaultMessage="Public Path" />
-          {data.name}
+          {data.publicPath}
         </div>
         <div>
-          <span onClick={() => setViewDetails(!viewDetails)}>View Details</span>
+          <span onClick={() => onDetails()}>View Details</span>
         </div>
-        {viewDetails && (
-          <div>
-            <div className="real_name">{data.name}</div>
-            <div className="role_name">
-              <FormattedMessage id="nickname" defaultMessage="Public Path" />
-              {data.name}
-            </div>
-            <div>
-              <span onClick={() => onDelete()}>
-                <i className="fas fa-trash" />
-              </span>
-              <span onClick={() => onEdit()}>
-                <i className="fas fa-edit" />
-              </span>
-            </div>
-          </div>
-        )}
+        <div>
+          <span onClick={() => onDelete()}>
+            <i className="fas fa-trash" />
+          </span>
+          <span onClick={() => onEdit()}>
+            <i className="fas fa-edit" />
+          </span>
+        </div>
       </div>
     </div>
   );

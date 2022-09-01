@@ -1,22 +1,22 @@
 import "./site.scss";
 import React, { useState } from "react";
 import SimpleInput from "components/inputs/simpleInput";
+import { isComplete, isNotEmpty } from "utils/validations";
+import Button from "@mui/material/Button";
 
-const Site = ({ site = null, onClickEvent }) => {
+const Site = ({ site = null, onClickEvent, closeModal, title }) => {
   const [data, setData] = useState(site);
-  console.log(data);
 
   return (
     <div>
+      <h2>{title}</h2>
       <div className="column2">
         <SimpleInput
           type="text"
           label="Name"
           classFieldName="semi"
           value={data?.name}
-          validation={(value) =>
-            value !== null && value !== "" && value !== undefined
-          }
+          validation={(value) => isNotEmpty(value)}
           onChange={(value) =>
             setData({
               ...data,
@@ -29,9 +29,7 @@ const Site = ({ site = null, onClickEvent }) => {
           label="Key"
           classFieldName="semi"
           value={data?.key}
-          validation={(value) =>
-            value !== null && value !== "" && value !== undefined
-          }
+          validation={(value) => isNotEmpty(value)}
           onChange={(value) =>
             setData({
               ...data,
@@ -47,9 +45,7 @@ const Site = ({ site = null, onClickEvent }) => {
           classInputName="full"
           label="Description"
           value={data?.description}
-          validation={(value) =>
-            value !== null && value !== "" && value !== undefined
-          }
+          validation={(value) => isNotEmpty(value)}
           onChange={(value) =>
             setData({
               ...data,
@@ -63,9 +59,7 @@ const Site = ({ site = null, onClickEvent }) => {
           classInputName="full"
           label="Path"
           value={data?.path}
-          validation={(value) =>
-            value !== null && value !== "" && value !== undefined
-          }
+          validation={(value) => isNotEmpty(value)}
           onChange={(value) =>
             setData({
               ...data,
@@ -79,9 +73,7 @@ const Site = ({ site = null, onClickEvent }) => {
           classInputName="full"
           label="Public Path"
           value={data?.publicPath}
-          validation={(value) =>
-            value !== null && value !== "" && value !== undefined
-          }
+          validation={(value) => isNotEmpty(value)}
           onChange={(value) =>
             setData({
               ...data,
@@ -91,10 +83,17 @@ const Site = ({ site = null, onClickEvent }) => {
         />
       </div>
 
-      <div>
-        <button type="button" onClick={() => onClickEvent(data)}>
-          crear
-        </button>
+      <div className="buttons">
+        <Button variant="outlined" onClick={() => closeModal()}>
+          Cancelar
+        </Button>
+        <Button
+          disabled={!isComplete(data)}
+          variant="contained"
+          onClick={() => onClickEvent(data)}
+        >
+          Enviar
+        </Button>
       </div>
     </div>
   );

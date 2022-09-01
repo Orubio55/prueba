@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ListSites from "components/listSites";
 import ModalWrapper from "components/modal";
 import Site from "components/modal/site";
+import Details from "components/modal/details";
 import {
   useGetSitesQuery,
   usePostSiteMutation,
@@ -27,24 +28,44 @@ const List = () => {
     setModalView(false);
   };
 
+  const onHandleEdit = (e) => {
+    setModalChildren(
+      <Site
+        site={e}
+        onClickEvent={onEdit}
+        closeModal={() => setModalView(false)}
+        title="Editar"
+      />
+    );
+    setModalView(true);
+  };
+
+  const onHandleCreate = () => {
+    setModalChildren(
+      <Site
+        onClickEvent={onCreate}
+        closeModal={() => setModalView(false)}
+        title="Creacion"
+      />
+    );
+    setModalView(true);
+  };
+
+  const onHandleDetails = (e) => {
+    setModalChildren(
+      <Details site={e} closeModal={() => setModalView(false)} />
+    );
+    setModalView(true);
+  };
+
   return (
     <>
       <ListSites
         listSites={sites}
-        onHandleEdit={(e) => {
-          setModalChildren(<Site site={e} onClickEvent={onEdit} />);
-          setModalView(true);
-        }}
+        onHandleEdit={(e) => onHandleEdit(e)}
+        onHandleCreate={() => onHandleCreate()}
+        onHandleDetails={(e) => onHandleDetails(e)}
       />
-      <br />
-      <div
-        onClick={() => {
-          setModalChildren(<Site onClickEvent={onCreate} />);
-          setModalView(true);
-        }}
-      >
-        aqui has de click
-      </div>
       <ModalWrapper open={modalView} onClose={() => setModalView(false)}>
         {modalChildren}
       </ModalWrapper>

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="paginationBox"
+    >
+      <span
+        class="pagination-element active "
+      >
+        1
+      </span>
+      <span
+        class="pagination-element  "
+      >
+        2
+      </span>
+      <span
+        class="pagination-element"
+      >
+        »
+      </span>
+    </div>
+  </div>
+</body>
+`;

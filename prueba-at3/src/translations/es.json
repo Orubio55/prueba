@@ -1,4 +1,11 @@
 {
-    "error":"Error de obtención de datos",
-    "nickname": "Apodo:"
+    "error":"No encontrado",
+    "name": "Nombre: ",
+    "publicPath": "Path publico: ",
+    "path": "Path",
+    "key": "Clave",
+    "Site": "Site",
+    "description": "Descripcion",
+    "viewDetails": "Ver detalles",
+    "details": "Detalles"
 }

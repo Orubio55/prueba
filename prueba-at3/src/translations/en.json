@@ -1,4 +1,11 @@
 {
-    "error":"Data fetch error",
-    "nickname": "Nickname:"
+    "error":"Not Found",
+    "name": "Name: ",
+    "publicPath": "Path publico: ",
+    "path": "Path",
+    "key": "Key",
+    "Site": "Site",
+    "description": "Description",
+    "viewDetails": "View Details",
+    "details": "Details"
 }

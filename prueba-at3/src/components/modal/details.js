@@ -30,19 +30,19 @@ const Details = ({ site = null, closeModal }) => (
     </div>
     <div className="column">
       <div className="label">
-        <FormattedMessage id="nickname" defaultMessage="Public Path" />
+        <FormattedMessage id="description" defaultMessage="Public Path" />
         <span>{site.description}</span>
       </div>
     </div>
     <div className="column">
       <div className="label">
-        <FormattedMessage id="nickname" defaultMessage="Public Path" />
+        <FormattedMessage id="path" defaultMessage="Public Path" />
         <span>{site.path}</span>
       </div>
     </div>
     <div className="column">
       <div className="label">
-        <FormattedMessage id="nickname" defaultMessage="Public Path" />
+        <FormattedMessage id="publicPath" defaultMessage="Public Path" />
         <span>{site.publicPath}</span>
       </div>
     </div>

@@ -39,8 +39,8 @@ body{
                 width: 100%;
                 object-fit: scale-down;
             }
-            .real_name{
-                color: #f08804;
+            .name{
+                color: #04a4f0;
                 font-weight: 900;
                 letter-spacing: 2px;
                 text-transform: uppercase;
@@ -49,8 +49,8 @@ body{
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-            .role_name{
-                color: #b6c0c2;
+            .path{
+                color: #6b7172;
                 font-size: 15px;
                 font-weight: 100;
                 margin: 5px 0 10px;
@@ -64,8 +64,9 @@ body{
                 span{
                     color: #b6c0c2;
                     margin-right: 30%;
+                    cursor: pointer;
                     &:hover{
-                        color: #f08804;
+                        color: #04a4f0;
                     }
                 }
             }
@@ -97,15 +98,19 @@ body{
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        background: #f08804;
+        background: #04a4f0;
         position: absolute;
         left: 20px;
+        &:hover{
+            background: #0479af;
+        }
         cursor: pointer;
         .plus{
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 32%;
+            color: #fff;
         }
    }
 }

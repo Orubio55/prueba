@@ -22,9 +22,9 @@ const CardItem = React.memo(({ data, onEdit, onDetails }) => {
     <div className="card_item">
       <div className="card_inner">
         {/* <img src={data.img} alt="product" /> */}
-        <div className="real_name">{data.name}</div>
-        <div className="role_name">
-          <FormattedMessage id="nickname" defaultMessage="Public Path" />
+        <div className="name">{data.name}</div>
+        <div className="path">
+          <FormattedMessage id="publicPath" defaultMessage="Public Path" />
           {data.publicPath}
         </div>
         <div className="actions">
